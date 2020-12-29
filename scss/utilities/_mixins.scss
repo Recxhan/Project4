@@ -1,0 +1,17 @@
+@mixin center-layout($top-margin: null, $max-width: null){
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $top-margin;
+    max-width: $max-width;
+    @content;
+}
+
+@mixin flexy($display: null, $dir: null, $basis: null, $just: null, $align: null){
+    display: $display;
+    flex-direction: $dir;
+    flex-basis: $basis;
+    justify-content: $just;
+    align-items: $align;
+    @content
+}

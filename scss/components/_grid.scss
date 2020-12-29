@@ -1,0 +1,30 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+.container {
+    padding: 0 10px;
+  }
+  
+  .row {
+    @include flexy($display: flex, $dir: column);
+    padding: 1em 10px;
+  }
+  
+  [class^=col] {
+    @include flexy($basis: 100%);
+    margin-top: 10px;
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  @each $background-color, $color in $background-color{
+    .theme.#{$background-color}{
+        background-color: $color;
+    }
+  }
+
+  .card {
+    @include flexy($basis: 100%);
+  }
+  

@@ -1,0 +1,51 @@
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+@media #{$brk-narrow} {
+
+    .container {
+      max-width: 1400px;
+      @include center-layout;
+    }
+    
+    .centered {
+     @include center-layout;
+    }
+    
+    .row {
+      @include flexy($dir: row);
+    }
+    
+    [class^=col] {
+    & + & {
+      margin-left: 10px;
+    }
+    @include flexy($display: flex, $just: center, $align: center);
+      margin-top: 0;
+    }
+    
+    @each $col, $flex-basis in $col{
+      #{$col}{
+        flex-basis: $flex-basis;
+      }
+    }
+    .nav {
+      @include flexy($dir: row, $just: flex-end, $align: center);
+    &-link {
+      @include flexy($basis: 100px);
+    }
+  }
+    
+    .btn {
+      padding: 10px 30px;
+    & + & {
+      margin-left: 10px;
+    }
+    }
+
+    .logo {
+      margin-left: initial;
+      margin-right: initial;
+    }
+    
+    }
